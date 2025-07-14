@@ -1,0 +1,43 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - Hello App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-5 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <h3 class="card-title mb-4 text-center">Create an Account</h3>
+            <form method="post" action="${pageContext.request.contextPath}/register">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required />
+              </div>
+              <button type="submit" class="btn btn-success w-100">Register</button>
+            </form>
+
+            <c:if test="${not empty msg}">
+              <div class="alert alert-success mt-3" role="alert">${msg}</div>
+            </c:if>
+
+            <div class="mt-3 text-center">
+              <a href="${pageContext.request.contextPath}/login">Already have an account? Login here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
