@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/api/books")
 
 public class BookController {
     private final BookService service;
